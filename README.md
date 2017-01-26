@@ -1,5 +1,7 @@
 # Grunt-setup
 
+Based on the older version of grunt install and some usefull updates from V. Mineva.
+
 ##How to install
 
 1. Clone repo
