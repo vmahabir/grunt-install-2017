@@ -6,6 +6,15 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     copy: {
+      bower: {
+          files: [{
+              expand: true,
+              cwd: 'bower_components/',
+              src: ['*', '**'],
+              dest: 'build/vendor',
+              filter: 'isFile'
+          }]
+      },       
       main: {
         files: [{
           expand: true,
@@ -168,4 +177,5 @@ module.exports = function(grunt) {
   grunt.registerTask('js', ['jshint', 'uglify']);
   grunt.registerTask('css', ['sass', 'cssmin']);
   grunt.registerTask('html', ['htmlhint']);
+  grunt.registerTask('build', ['clean', 'copy:main', 'copy:bower']);  
 };
